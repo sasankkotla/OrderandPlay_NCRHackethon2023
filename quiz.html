@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for ordering!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+  
+      html {
+            box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        body {
+            font-family: sans-serif;
+            padding: 1rem;
+            background-color: rgb(47, 236, 9);
+        }
+        .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+      }
+        .quiz,
+        .choices {
+            list-style-type: none;
+            padding: 0;
+        }
+        .choices li {
+            margin-bottom: 5px;
+        }
+        .choices label {
+            display: flex;
+            align-items: center;
+        }
+        .choices label,
+        input[type="radio"] {
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        .view-results {
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 12px;
+            color: white;
+            background: teal;
+            border-radius: 8px;
+            margin-right: 5px;
+            align-items: center;
+        }
+        .my-results {
+            padding: 0.5rem;
+    border: 1px solid rgb(22, 22, 21);
+}
+
+    </style>
+    <script>
+        var answers = ["A", "C", "B"],
+        tot = answers.length;
+        function getCheckedValue(radioName) {
+            var radios = document.getElementsByName(radioName);
+            for (var y = 0; y < radios.length; y++)
+                if (radios[y].checked) return radios[y].value;
+        }
+        function getScore() {
+            var score = 0;
+            for (var i = 0; i < tot; i++)
+                if (getCheckedValue("question" + i) === answers[i]) score += 1;
+            return score;
+        }
+        function returnScore() {
+            document.getElementById("myresults").innerHTML =
+                "Your score is " + getScore() + "/" + tot;
+            if (getScore() > 2) {
+                console.log("Bravo");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>QUIZ</h2>
+    </div>
+    <div>
+        <ul class="quiz">
+            <li>
+                <h6>How many letters are there in "JS"?</h6>
+                <ul class="choices">
+                    <li>
+                        <label
+                            ><input type="radio" name="question0" value="A" /><span
+                                >2</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question0" value="B" /><span
+                                >1</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question0" value="C" /><span
+                                >3</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question0" value="D" /><span
+                                >4</span
+                            ></label
+                        >
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h6>How many letters are there in "BMX"?</h6>
+                <ul class="choices">
+                    <li>
+                        <label
+                            ><input type="radio" name="question1" value="A" /><span
+                                >2</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question1" value="B" /><span
+                                >1</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question1" value="C" /><span
+                                >3</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question1" value="D" /><span
+                                >4</span
+                            ></label
+                        >
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h6>How many letters are there in "A"?</h6>
+                <ul class="choices">
+                    <li>
+                        <label
+                            ><input type="radio" name="question2" value="A" /><span
+                                >2</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question2" value="B" /><span
+                                >1</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question2" value="C" /><span
+                                >3</span
+                            ></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            ><input type="radio" name="question2" value="D" /><span
+                                >4</span
+                            ></label
+                        >
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <button class="view-results" onclick="returnScore()">View Results</button>
+        <span id="myresults" class="my-results">My results</span>
+    </div>
+</body>
+</html>

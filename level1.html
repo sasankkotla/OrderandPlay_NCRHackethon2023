@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for ordering!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+  
+      /* body {
+        margin: 100;
+        box-sizing: border-box;
+      } */
+      main{
+        display: flex;
+        flex-direction: column;
+      }
+      body{
+        margin: 100;
+        box-sizing: border-box;
+        /* background: url("./images/bgimg5.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; */
+        
+      }
+      /* CSS for header */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /*background-color: #f5f5f5;*/
+      }
+      /* .game1{
+        padding-left: 100px;
+      }
+      .game2{
+        padding-left: 500px;
+      } */
+      .root {
+          border: 3px solid #fff;
+          padding: 20px;
+          background: url("./images/bgimg5.jpg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+
+      .game {
+          width: 50%;
+          float: left;
+          padding: 20px;
+          /*border: 2px solid red;*/
+      }
+      .footer {
+        bottom: 0px;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding-right: 15px;
+        padding-right: 15px;
+      }
+      
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <h1> Level-1</h1>
+        </div>
+        <div class="root">
+            <div class="game">
+                
+                <div class="right">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png" alt="2048" style="width:200px;height:200px;">
+                </div>
+                <div class="left">
+                  <a href="https://www.bubbleshooter.net/2048/" target="_blank">
+                    <button>Play 2048</button>
+                  </a>
+                </div>
+            </div>
+
+            <div class="game">
+                
+                <div class="right">
+                  <img src="https://images.ctfassets.net/vfkpgemp7ek3/3040442632/130a2e7cfaec4177051bde2b80838a7a/candy-crush-revenue-2018.jpg?w=1920" alt="Candy Crush" style="width:200px;height:200px;">
+                </div>
+                <div class="left">
+                  <a href="https://www.bubbleshooter.net/game/candy-crush/" target="_blank">
+                    <button>Play Candy Crush</button>
+                  </a>
+              </div>
+            </div>
+
+            <div class="game">
+                <div class="right">
+                  <img src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/google-quiz.jpg?width=595&height=400&name=google-quiz.jpg" alt="Quiz" style="width:200px;height:200px;">
+                </div>
+                <div class="left">
+                  <a href="./quiz.html" target="_blank">
+                    <button>Play Quiz</button>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h4>You need to order more to play level-2 games</h4><br>
+            <h5>Already ordered more than once !!? Please enter your Code:</h5>
+            <!-- <label for="code">Code:</label> -->
+            <input type="number" name="number" id="number" required>
+            <a href="./onsubmit.html" target="_blank">
+              <button>Submit</button>
+            </a>
+
+        </div>
+    </main>
+</body>
+</html>
